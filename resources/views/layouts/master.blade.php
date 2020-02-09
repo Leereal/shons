@@ -16,7 +16,7 @@
 </head>
 
 <body class="">
-  <div class="wrapper ">
+  <div class="wrapper " id="app">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -25,22 +25,76 @@
     -->
       <div class="logo">
         <a href="{{ url('/') }}" class="simple-text logo-normal">
-          Shons Finance
+        {{ Auth::user()->name }} 
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <router-link class="nav-link" to="/clients">
+              <i class="material-icons">group</i>
+              <p>Clients</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/branches">
+              <i class="material-icons">merge_type</i>
+              <p>Branches</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/disbursements">
+              <i class="material-icons">money</i>
+              <p>Disbursement</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/payments">
+              <i class="material-icons">payment</i>
+              <p>Repayment</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/registers">
+              <i class="material-icons">book</i>
+              <p>Registers</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="reports">
+              <i class="material-icons">assessment</i>
+              <p>Reports</p>
+            </router-link>
+          </li> 
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/users">
+              <i class="material-icons">people</i>
+              <p>Users</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/reversals">
+              <i class="material-icons">restore</i>
+              <p>Reversals</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/profile">
               <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
+              <p>Profile</p>
+            </router-link>
+          </li>
+          <li class="nav-item ">
+            <router-link class="nav-link" to="/backup">
+              <i class="material-icons">backup</i>
+              <p>Back Up</p>
+            </router-link>
           </li>          
         </ul>
       </div>
@@ -50,7 +104,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Dashboard</a>
+            <a class="navbar-brand" href="">Dashboard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -81,7 +135,7 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-        @yield('content')         
+        <router-view></router-view>         
         </div>
       </div>
       <footer class="footer">
