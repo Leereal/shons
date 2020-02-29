@@ -1,10 +1,44 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
-@import '../assets/css/material-dashboard.css';
-@import '../assets/demo/demo.css';
+// @import '../../public/assets/css/material-dashboard.css';
+// @import '../../public/assets/demo/demo.css';
+
+.sidebar .nav li:first-child>router-link {
+    margin: 0 15px;
+}
+
+.sidebar .nav li router-link, .sidebar .nav li .dropdown-menu router-link {
+    margin: 10px 15px 0;
+    border-radius: 3px;
+    color: #3C4858;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+router-link {
+    color: #9c27b0;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.router-link-exact-active{
+    background-color: $primarycolor;
+    color: #fff !important;
+}
+.modal-header{
+    background-color: $primarycolor;
+    color: #fff !important;
+}
+.modal-footer{
+    background-color: $primarycolor;
+    color: #fff !important;
+}
+
