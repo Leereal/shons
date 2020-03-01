@@ -1,10 +1,12 @@
 <ul class="nav">
-    <li class="nav-item ">
-        <router-link class="nav-link" to="/dashboard">
-        <i class="material-icons">dashboard</i>
-        <p>Dashboard</p>
-        </router-link>
-    </li>
+    @if(Auth::user()->hasRole(['System Admin']))
+        <li class="nav-item ">
+            <router-link class="nav-link" to="/dashboard">
+            <i class="material-icons">dashboard</i>
+            <p>Dashboard</p>
+            </router-link>
+        </li>
+    @endif
     <li class="nav-item  active">
         <a class="nav-link" data-toggle="collapse" href="#pagesExamples" aria-expanded="true">
         <i class="material-icons">image</i>
